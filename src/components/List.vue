@@ -1,9 +1,8 @@
 <template lang="kor">
     <div>
-        <h5>{{blogContents.title}}</h5>
-        <p>{{blogContents.content}}</p>
-        <p>{{blogContents.date}}</p>
-        <p>{{blogContents.number}}</p>
+        <h5 @click="$router.push('/detail/0')">{{blogContents[0].title}}</h5>
+        <p>{{blogContents[0].content}}</p>
+        <p>{{blogContents[0].date}}</p>
     </div>
 </template>
 <script>

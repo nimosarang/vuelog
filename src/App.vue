@@ -55,20 +55,21 @@
     </div>
   </nav>
 
-  <div class="container mt-4">
-    <h5>React 개발자의 블로그입니다.</h5>
-    <p>- Vue로 만들었음</p>
-  </div>
+  <router-link to="/">홈</router-link>
+  <router-link to="/list">리스트페이지</router-link>
 
-  <ListVue
-    :blogContents="blogContents[i]"
-    v-for="(blogContent, i) in blogContents"
-    :key="i"
-  />
+  <div class="mt-4">
+    <!-- <router-view
+      :blogContents="blogContents[i]"
+      v-for="(blogContent, i) in blogContents"
+      :key="i"
+    ></router-view> -->
+    <router-view :blogContents="blogContents"></router-view>
+  </div>
 </template>
 
 <script>
-import ListVue from "./components/List.vue";
+// import ListVue from "./components/List.vue";
 import blog from "./assets/blog.js";
 
 export default {
@@ -78,9 +79,7 @@ export default {
       blogContents: [...blog],
     };
   },
-  components: {
-    ListVue,
-  },
+  components: {},
 };
 </script>
 
